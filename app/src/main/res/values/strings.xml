@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">StarWarsMVP-Kotlin</string>
+
+    <string name="text_planets">Planets</string>
+    <string name="text_characters">Characters</string>
+    <string name="text_starships">Starships</string>
 </resources>
