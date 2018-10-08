@@ -4,19 +4,19 @@
     <item
         android:id="@+id/action_planets"
         android:enabled="true"
-        android:icon="@drawable/ic_planet_white_24dp"
+        android:icon="@drawable/ic_planet_white"
         android:title="@string/text_planets"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_schedules"
+        android:id="@+id/action_characters"
         android:enabled="true"
-        android:icon="@drawable/ic_character_white_24dp"
+        android:icon="@drawable/ic_character_white"
         android:title="@string/text_characters"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_music"
+        android:id="@+id/action_starships"
         android:enabled="true"
-        android:icon="@drawable/ic_starship_white_24dp"
+        android:icon="@drawable/ic_starship_white"
         android:title="@string/text_starships"
         app:showAsAction="ifRoom" />
 </menu>

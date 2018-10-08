@@ -15,10 +15,10 @@ interface ApiService {
     fun getPlanets(): Call<PlanetsResponse>
 
     /**
-     * Retrieve a list of people
+     * Retrieve a list of characters
      */
     @GET("people/")
-    fun getPeople(): Call<CharactersResponse>
+    fun getCharacters(): Call<CharactersResponse>
 
     /**
      * Retrieve a list of starships
