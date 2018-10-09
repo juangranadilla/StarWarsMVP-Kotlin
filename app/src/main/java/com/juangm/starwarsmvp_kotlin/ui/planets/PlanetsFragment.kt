@@ -14,11 +14,12 @@ class PlanetsFragment : Fragment(), PlanetsView {
     private val planetsPresenter : PlanetsPresenter = PlanetsPresenter(this, PlanetsInteractor())
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_planets, container, false)
+        return inflater.inflate(R.layout.fragment_planets, container, false)
+    }
 
+    override fun onStart() {
+        super.onStart()
         planetsPresenter.loadPlanets()
-
-        return view
     }
 
     override fun onDestroy() {
@@ -35,10 +36,10 @@ class PlanetsFragment : Fragment(), PlanetsView {
     }
 
     override fun showPlanetList() {
-        toast("Success!")
+        toast("Success loading planets!")
     }
 
     override fun showError() {
-        toast("Error")
+        toast("Error loading planets...")
     }
 }

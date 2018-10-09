@@ -6,28 +6,40 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.juangm.starwarsmvp_kotlin.R
+import kotlinx.android.synthetic.main.fragment_starships.*
+import org.jetbrains.anko.support.v4.toast
 
-class StarshipsFragment : Fragment() {
+class StarshipsFragment : Fragment(), StarshipsView {
+
+    private val starshipsPresenter : StarshipsPresenter = StarshipsPresenter(this, StarshipsInteractor())
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_starships, container, false)
+        return inflater.inflate(R.layout.fragment_starships, container, false)
+    }
 
-//        doAsync {
-//            RetrofitClient.service.getStarships().enqueue(object : Callback<StarshipsResponse> {
-//                override fun onFailure(call: Call<StarshipsResponse>, t: Throwable) {
-//                    uiThread {
-//                        toast("Failure!")
-//                    }
-//                }
-//
-//                override fun onResponse(call: Call<StarshipsResponse>, response: Response<StarshipsResponse>) {
-//                    uiThread {
-//                        toast("Success!")
-//                    }
-//                }
-//            })
-//        }
+    override fun onStart() {
+        super.onStart()
+        starshipsPresenter.loadCharacters()
+    }
 
-        return view
+    override fun onDestroy() {
+        super.onDestroy()
+        starshipsPresenter.onDestroy()
+    }
+
+    override fun showProgress() {
+        progress_starships.visibility = View.VISIBLE
+    }
+
+    override fun hideProgress() {
+        progress_starships.visibility = View.GONE
+    }
+
+    override fun showStarshipList() {
+        toast("Success loading starships!")
+    }
+
+    override fun showError() {
+        toast("Success loading starships!")
     }
 }

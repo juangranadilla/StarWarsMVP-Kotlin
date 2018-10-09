@@ -3,6 +3,7 @@ package com.juangm.starwarsmvp_kotlin.ui.planets
 class PlanetsPresenter(var planetsView: PlanetsView?, var planetsInteractor: PlanetsInteractor) : PlanetsInteractor.onLoadPlanets {
 
     fun loadPlanets() {
+        planetsView?.showProgress()
         planetsInteractor.getPlanets(this)
     }
 
