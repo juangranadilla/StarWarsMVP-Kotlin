@@ -1,5 +1,7 @@
 package com.juangm.starwarsmvp_kotlin.ui.characters
 
+import com.juangm.starwarsmvp_kotlin.data.models.Character
+
 class CharactersPresenter(var charactersView: CharactersView?, var charactersInteractor: CharactersInteractor) : CharactersInteractor.onLoadCharacters {
 
     fun loadCharacters() {
@@ -11,9 +13,13 @@ class CharactersPresenter(var charactersView: CharactersView?, var charactersInt
         charactersView = null
     }
 
-    override fun onLoadCharactersSuccess() {
+    override fun onLoadCharactersSuccess(characters: List<Character>?) {
         charactersView?.hideProgress()
-        charactersView?.showCharacterList()
+        if(characters != null) {
+            charactersView?.showCharacterList(characters)
+        } else {
+            onLoadCharactersError()
+        }
     }
 
     override fun onLoadCharactersError() {

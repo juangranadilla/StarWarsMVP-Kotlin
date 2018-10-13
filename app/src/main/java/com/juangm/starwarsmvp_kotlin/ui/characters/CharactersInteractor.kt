@@ -1,5 +1,6 @@
 package com.juangm.starwarsmvp_kotlin.ui.characters
 
+import com.juangm.starwarsmvp_kotlin.data.models.Character
 import com.juangm.starwarsmvp_kotlin.data.network.RetrofitClient
 import com.juangm.starwarsmvp_kotlin.data.network.response.CharactersResponse
 import retrofit2.Call
@@ -9,7 +10,7 @@ import retrofit2.Response
 class CharactersInteractor {
 
     interface onLoadCharacters {
-        fun onLoadCharactersSuccess()
+        fun onLoadCharactersSuccess(characters: List<Character>?)
         fun onLoadCharactersError()
     }
 
@@ -20,7 +21,7 @@ class CharactersInteractor {
             }
 
             override fun onResponse(call: Call<CharactersResponse>, response: Response<CharactersResponse>) {
-                onLoadCharacters.onLoadCharactersSuccess()
+                onLoadCharacters.onLoadCharactersSuccess(response.body()?.results)
             }
         })
     }
