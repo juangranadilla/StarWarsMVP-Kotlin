@@ -4,19 +4,22 @@ import com.juangm.starwarsmvp_kotlin.data.models.Character
 
 class CharactersPresenter(var charactersView: CharactersView?, var charactersInteractor: CharactersInteractor) : CharactersInteractor.onLoadCharacters {
 
-    fun loadCharacters() {
-        charactersView?.showProgress()
-        charactersInteractor.getCharacters(this)
+    fun loadCharacters(nextPage: Int?) {
+        if(nextPage != null) {
+            charactersView?.showProgressLoadMore()
+            charactersInteractor.getCharacters(this, nextPage)
+        }
     }
 
     fun onDestroy() {
         charactersView = null
     }
 
-    override fun onLoadCharactersSuccess(characters: List<Character>?) {
+    override fun onLoadCharactersSuccess(characters: List<Character>?, nextPage: Int?) {
         charactersView?.hideProgress()
+        charactersView?.hideProgressLoadMore()
         if(characters != null) {
-            charactersView?.showCharacterList(characters)
+            charactersView?.updateCharacterList(characters, nextPage)
         } else {
             onLoadCharactersError()
         }

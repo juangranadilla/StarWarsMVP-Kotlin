@@ -5,6 +5,7 @@ import com.juangm.starwarsmvp_kotlin.data.network.response.PlanetsResponse
 import com.juangm.starwarsmvp_kotlin.data.network.response.StarshipsResponse
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface ApiService {
 
@@ -18,7 +19,7 @@ interface ApiService {
      * Retrieve a list of characters
      */
     @GET("people/")
-    fun getCharacters(): Call<CharactersResponse>
+    fun getCharacters(@Query("page") page: Int): Call<CharactersResponse>
 
     /**
      * Retrieve a list of starships
