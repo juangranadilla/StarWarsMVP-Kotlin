@@ -1,8 +1,8 @@
 package com.juangm.starwarsmvp_kotlin.ui.starships
 
-interface StarshipsView {
-    fun showProgress()
-    fun hideProgress()
-    fun showStarshipList()
-    fun showError()
+import com.juangm.starwarsmvp_kotlin.data.models.Starship
+import com.juangm.starwarsmvp_kotlin.ui.common.BaseView
+
+interface StarshipsView: BaseView {
+    fun showStarshipList(starships: List<Starship>, nextPage: Int?)
 }

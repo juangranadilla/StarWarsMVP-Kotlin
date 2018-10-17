@@ -9,7 +9,7 @@ import com.juangm.starwarsmvp_kotlin.R
 import com.juangm.starwarsmvp_kotlin.data.models.Planet
 import kotlinx.android.synthetic.main.item_planet.view.*
 
-class PlanetsAdapter(var planets: List<Planet>, var context: Context) : RecyclerView.Adapter<PlanetsAdapter.PlanetViewHolder>() {
+class PlanetsAdapter(var planets: List<Planet>, var context: Context?) : RecyclerView.Adapter<PlanetsAdapter.PlanetViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int): PlanetViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_planet, parent, false)

@@ -9,7 +9,7 @@ import com.juangm.starwarsmvp_kotlin.R
 import com.juangm.starwarsmvp_kotlin.data.models.Starship
 import kotlinx.android.synthetic.main.item_starship.view.*
 
-class StarshipsAdapter(var starships: List<Starship>, var context: Context) : RecyclerView.Adapter<StarshipsAdapter.StarshipViewHolder>() {
+class StarshipsAdapter(var starships: List<Starship>, var context: Context?) : RecyclerView.Adapter<StarshipsAdapter.StarshipViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int): StarshipViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_starship, parent, false)

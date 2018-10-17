@@ -6,7 +6,11 @@ class CharactersPresenter(var charactersView: CharactersView?, var charactersInt
 
     fun loadCharacters(nextPage: Int?) {
         if(nextPage != null) {
-            charactersView?.showProgressLoadMore()
+            if(nextPage == 1) {
+                charactersView?.showProgress()
+            } else {
+                charactersView?.showProgressLoadMore()
+            }
             charactersInteractor.getCharacters(this, nextPage)
         }
     }
@@ -27,6 +31,7 @@ class CharactersPresenter(var charactersView: CharactersView?, var charactersInt
 
     override fun onLoadCharactersError() {
         charactersView?.hideProgress()
+        charactersView?.hideProgressLoadMore()
         charactersView?.showError()
     }
 }

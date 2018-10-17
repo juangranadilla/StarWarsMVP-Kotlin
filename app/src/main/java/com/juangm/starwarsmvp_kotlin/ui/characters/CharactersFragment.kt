@@ -16,7 +16,7 @@ import org.jetbrains.anko.support.v4.toast
 class CharactersFragment : Fragment(), CharactersView {
 
     private val charactersPresenter : CharactersPresenter = CharactersPresenter(this, CharactersInteractor())
-    private var characters: MutableList<Character> = ArrayList<Character>()
+    private var characters: MutableList<Character> = ArrayList()
     private var nextPage: Int? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

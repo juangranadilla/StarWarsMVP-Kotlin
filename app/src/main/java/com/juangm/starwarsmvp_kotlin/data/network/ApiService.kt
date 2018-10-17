@@ -13,7 +13,7 @@ interface ApiService {
      * Retrieve a list of planets
      */
     @GET("planets/")
-    fun getPlanets(): Call<PlanetsResponse>
+    fun getPlanets(@Query("page") page: Int): Call<PlanetsResponse>
 
     /**
      * Retrieve a list of characters
@@ -25,5 +25,5 @@ interface ApiService {
      * Retrieve a list of starships
      */
     @GET("starships/")
-    fun getStarships(): Call<StarshipsResponse>
+    fun getStarships(@Query("page") page: Int): Call<StarshipsResponse>
 }
