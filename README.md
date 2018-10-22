@@ -4,6 +4,4 @@ Very simple Android MVP project using [*Retrofit*](http://square.github.io/retro
 
 * * *
 
-<img src="screenshots/planets_loading_screenshot.png" width=250>
-<img src="screenshots/planets_screenshot.png" width=250>
-<img src="screenshots/characters_load_more_screenshot.png" width=250>
+<img src="screenshots/planets_loading_screenshot.png" width=250> <img src="screenshots/planets_screenshot.png" width=250> <img src="screenshots/characters_load_more_screenshot.png" width=250>
