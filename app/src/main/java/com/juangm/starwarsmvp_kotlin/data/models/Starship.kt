@@ -1,22 +1,9 @@
 package com.juangm.starwarsmvp_kotlin.data.models
 
-class Starship {
-    var name: String? = null
-    var model: String? = null
-    var manufacturer: String? = null
-    var cost_in_credits: String? = null
-    var length: String? = null
-    var max_atmosphering_speed: String? = null
-    var crew: String? = null
-    var passengers: String? = null
-    var cargo_activity: String? = null
-    var consumables: String? = null
-    var hyperdrive_rating: String? = null
-    var MGLT: String? = null
-    var starship_class: String? = null
-    var pilots: List<String>? = null
-    var films: List<String>? = null
-    var created: String? = null
-    var edited: String? = null
-    var url: String? = null
-}
+class Starship(val name: String?, val model: String?, val manufacturer: String?,
+               val cost_in_credits: String?, val length: String?,
+               val max_atmosphering_speed: String?, val crew: String?, val passengers: String?,
+               val cargo_activity: String?, val consumables: String?,
+               val hyperdrive_rating: String?, val MGLT: String?, val starship_class: String?,
+               val pilots: List<String>?, val films: List<String>?, val created: String?,
+               val edited: String?, val url: String?)
